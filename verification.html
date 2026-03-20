@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Verification | AI-IPVB Forensic Search</title>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/master-bureau.css">
+    <style>
+        .verify-hero { padding: 8rem 10% 4rem 10%; text-align: center; background: radial-gradient(circle at top, var(--bureau-slate), var(--bureau-navy)); }
+        .search-container { max-width: 700px; margin: 0 auto; position: relative; }
+        .search-input { width: 100%; padding: 25px 30px; font-size: 1.2rem; font-family: 'Courier New', monospace; background: rgba(2, 12, 27, 0.9); border: 2px solid var(--bureau-gold); color: var(--neural-cyan); letter-spacing: 2px; }
+        .search-input::placeholder { color: rgba(100, 255, 218, 0.3); font-size: 0.9rem; }
+        
+        .result-box { display: none; margin-top: 3rem; background: var(--bureau-slate); border: 1px solid var(--border-gray); padding: 40px; text-align: left; position: relative; }
+        .result-box.active { display: block; animation: fadeInUp 0.5s ease-out; }
+
+        .audit-trail { border-left: 2px dashed var(--bureau-gold); padding-left: 20px; margin: 20px 0; font-size: 0.85rem; }
+        .badge-verified { position: absolute; top: 20px; right: 20px; border: 2px solid var(--neural-cyan); color: var(--neural-cyan); padding: 5px 15px; font-weight: bold; transform: rotate(5deg); text-transform: uppercase; }
+        
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+
+<header class="bureau-header">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h2 class="bureau-serif" style="color: var(--bureau-gold); margin: 0;">AI-IPVB // VERIFY</h2>
+        <nav>
+            <a href="index.html">BUREAU HOME</a>
+            <a href="dashboard.html">MY RECORDS</a>
+            <span class="secure-id" style="margin-left: 20px;">NODE: PHILADELPHIA-PRIMARY</span>
+        </nav>
+    </div>
+</header>
+
+<section class="verify-hero">
+    <h1 class="bureau-serif">Forensic Asset Search</h1>
+    <p style="opacity: 0.7; max-width: 600px; margin: 0 auto 3rem auto;">Enter a Kin Pages Hash, C2PA Metadata ID, or Bureau Case Number to verify the forensic chain of authorship.</p>
+    
+    <div class="search-container">
+        <input type="text" class="search-input" id="searchID" placeholder="SK-NMMMB-XXXX-XXXX-XXXX" oninput="simulateAudit()">
+        <p style="font-size: 0.7rem; margin-top: 15px; color: var(--bureau-silver);">AUTHENTICATING VIA BUREAU RECORD 01 LEDGER...</p>
+    </div>
+
+    <div class="result-box" id="resultBox">
+        <div class="badge-verified">Bureau Verified</div>
+        <h3 class="bureau-serif" style="color: var(--bureau-gold);">Asset: Sovereign LYRA V.2</h3>
+        <p class="secure-id">HASH: 8f3e9a...c2b1</p>
+        
+        <div class="audit-trail">
+            <p><strong>N:</strong> Neural Integrity Check Passed (Sora v1.2 Core)</p>
+            <p><strong>M:</strong> 142 Iteration Manifest Logged</p>
+            <p><strong>M:</strong> Manual Pixel Refactoring Verified (54% Transformation)</p>
+            <p><strong>M:</strong> Provenance Mapped to 03-19-2026</p>
+            <p><strong>B:</strong> Baseline Tier 3 Sovereign Registered</p>
+        </div>
+
+        <div style="display: flex; gap: 20px; margin-top: 20px;">
+            <a href="#" class="btn-primary" style="font-size: 0.7rem; padding: 10px 20px;">Download Certificate</a>
+            <a href="https://VexillaAITS.com" class="support-link" style="font-size: 0.7rem;">Report IP Infringement</a>
+        </div>
+    </div>
+</section>
+
+<footer class="bureau-footer">
+    <div class="footer-column">
+        <h4>System Integrity</h4>
+        <p style="font-size: 0.7rem; opacity: 0.6;">Verification portal is direct-linked to Bureau Record 01. All queries are logged for security auditing purposes. Managed by Solomon Kin, LLC.</p>
+    </div>
+    <div class="footer-column">
+        <h4>Managed Support</h4>
+        <a href="https://VexillaAITS.com" class="support-link">VexillaAITS.com Technical Services</a>
+    </div>
+</footer>
+
+<script>
+    function simulateAudit() {
+        const input = document.getElementById('searchID').value;
+        const box = document.getElementById('resultBox');
+        // Simple visual trigger for demo purposes: 
+        // In reality, this would fetch from your GitHub repository JSON files.
+        if (input.length > 10) {
+            box.classList.add('active');
+        } else {
+            box.classList.remove('active');
+        }
+    }
+</script>
+
+</body>
+</html>
