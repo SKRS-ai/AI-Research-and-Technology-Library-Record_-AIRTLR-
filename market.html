@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Marketplace | AI-IPVB Subscription & Audits</title>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/master-bureau.css">
+    <style>
+        .market-header { text-align: center; padding: 4rem 10%; background: var(--bureau-slate); border-bottom: 1px solid var(--bureau-gold); }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; padding: 4rem 10%; }
+        
+        .plan-card { background: rgba(17, 34, 64, 0.9); border: 1px solid #233554; padding: 40px; position: relative; transition: 0.3s; display: flex; flex-direction: column; }
+        .plan-card:hover { border-color: var(--bureau-gold); transform: translateY(-5px); }
+        .plan-card.featured { border: 2px solid var(--bureau-gold); transform: scale(1.05); z-index: 10; }
+        
+        .plan-price { font-size: 2.5rem; font-weight: 700; color: var(--white); margin: 20px 0; }
+        .plan-price span { font-size: 1rem; color: var(--bureau-silver); }
+        
+        .feature-list { list-style: none; padding: 0; margin: 30px 0; flex-grow: 1; }
+        .feature-list li { margin-bottom: 15px; font-size: 0.9rem; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 5px; }
+        .feature-list li::before { content: "✓"; color: var(--neural-cyan); margin-right: 10px; }
+
+        .cart-summary { position: sticky; bottom: 0; background: var(--bureau-navy); border-top: 2px solid var(--bureau-gold); padding: 20px 10%; display: flex; justify-content: space-between; align-items: center; z-index: 100; }
+        
+        .vexilla-badge { font-size: 0.6rem; letter-spacing: 2px; color: var(--neural-cyan); border: 1px solid var(--neural-cyan); padding: 4px 8px; display: inline-block; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+<header class="bureau-header">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h2 class="bureau-serif" style="color: var(--bureau-gold); margin: 0;">AI-IPVB MARKET</h2>
+        <nav>
+            <a href="dashboard.html" style="color: var(--white); text-decoration: none; font-size: 0.8rem; margin-right: 20px;">BACK TO DASHBOARD</a>
+            <span class="secure-id">CART (1)</span>
+        </nav>
+    </div>
+</header>
+
+<section class="market-header">
+    <div class="vexilla-badge">SECURE PROCUREMENT PORTAL</div>
+    <h1 class="bureau-serif">Sovereign Asset Subscriptions</h1>
+    <p style="max-width: 700px; margin: 0 auto; opacity: 0.7;">Select your Bureau Tier to unlock forensic auditing, Kin Pages registry, and full intellectual property verification for your synthetic creations.</p>
+</section>
+
+<div class="pricing-grid">
+    <div class="plan-card">
+        <h3 class="bureau-serif">Tier 1: Assisted</h3>
+        <p style="font-size: 0.8rem; color: var(--bureau-silver);">For internal prototyping & data safety.</p>
+        <div class="plan-price">$49<span>/mo</span></div>
+        <ul class="feature-list">
+            <li>Neural Analysis (N) Audits</li>
+            <li>Basic Integrity Reports</li>
+            <li>Tier 1 Metadata Signing</li>
+            <li>Limited Kin Pages Registry</li>
+        </ul>
+        <button class="btn-primary" style="background: var(--bureau-silver); color: #000;">Select Tier 1</button>
+    </div>
+
+    <div class="plan-card featured">
+        <div style="position: absolute; top: 0; right: 0; background: var(--bureau-gold); color: #000; padding: 5px 15px; font-size: 0.7rem; font-weight: bold;">MOST POPULAR</div>
+        <h3 class="bureau-serif">Tier 2: Collaborative</h3>
+        <p style="font-size: 0.8rem; color: var(--bureau-silver);">Commercial Standard for Cast Ai Stars.</p>
+        <div class="plan-price">$199<span>/mo</span></div>
+        <ul class="feature-list">
+            <li>Full NMMMB Forensic Audit</li>
+            <li>100+ Iteration Manifest Logs</li>
+            <li><strong>Verified Human-Agency Seal</strong></li>
+            <li>Cast Ai Stars Talent Listing</li>
+            <li>Managed Support via VexillaAITS</li>
+        </ul>
+        <button class="btn-primary">Select Tier 2</button>
+    </div>
+
+    <div class="plan-card">
+        <h3 class="bureau-serif">Tier 3: Sovereign</h3>
+        <p style="font-size: 0.8rem; color: var(--bureau-silver);">Premium Ownership for NMMMB Gallery.</p>
+        <div class="plan-price">$499<span>/mo</span></div>
+        <ul class="feature-list">
+            <li>Manual-Mastered Pixel Audit</li>
+            <li>50%+ Human-Led Transformation</li>
+            <li><strong>Full IP Sovereignty Rights</strong></li>
+            <li>NMMMB Gallery Exclusive Entry</li>
+            <li>Priority Bureau Legal Defense</li>
+        </ul>
+        <button class="btn-primary" style="background: var(--bureau-bronze);">Select Tier 3</button>
+    </div>
+</div>
+
+<section class="cart-summary">
+    <div>
+        <span style="display: block; font-size: 0.7rem; color: var(--bureau-silver);">CURRENT SELECTION:</span>
+        <strong style="color: var(--bureau-gold);">Tier 2: Collaborative Subscription</strong>
+    </div>
+    <div style="display: flex; gap: 20px; align-items: center;">
+        <span class="plan-price" style="margin: 0;">$199.00</span>
+        <button class="btn-primary" style="padding: 10px 30px;">Proceed to Secure Checkout</button>
+    </div>
+</section>
+
+<footer class="bureau-footer">
+    <div class="footer-column">
+        <h4>Corporate Registry</h4>
+        <p style="font-size: 0.8rem; opacity: 0.6;">Solomon Kin, LLC<br>Philadelphia | Minneapolis</p>
+    </div>
+    <div class="footer-column">
+        <h4>Managed Support</h4>
+        <a href="https://VexillaAITS.com" class="support-link">VexillaAITS.com Technical Services</a>
+    </div>
+    <div class="footer-column">
+        <h4>Legal Compliance</h4>
+        <p style="font-size: 0.7rem;">All subscriptions are subject to the AI-IPVB Systemic Usage Agreement. Audit fees are non-refundable upon commencement of the Neural Analysis phase.</p>
+    </div>
+</footer>
+
+</body>
+</html>
