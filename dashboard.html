@@ -64,11 +64,17 @@
     <main class="main-content">
         <header style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem;">
             <div>
-                <h1 style="margin: 0;">Creator Dashboard</h1>
-                <p style="opacity: 0.6; font-size: 0.9rem;">Welcome back, Nehemiah M. Brown.</p>
-            </div>
-            <div style="text-align: right;">
-                <span class="secure-id">SESSION: ENCRYPTED</span>
+          <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const userEmail = localStorage.getItem('AIRTLR_USER_EMAIL');
+        if (userEmail) {
+            // Update the Welcome Message
+            document.getElementById('welcomeMsg').innerText = `Welcome back, Creator [${userEmail}]`;
+            // Update the Bureau ID Tag
+            document.getElementById('userBureauID').innerText = 'SK-USR-' + btoa(userEmail).substring(0, 8).toUpperCase();
+        }
+    });
+</script>
             </div>
         </header>
 
