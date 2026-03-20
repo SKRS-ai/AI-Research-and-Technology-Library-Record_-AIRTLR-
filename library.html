@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Library | AI-IPVB Research & Technology Archive</title>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/master-bureau.css">
+    <style>
+        .library-hero { padding: 6rem 10% 3rem 10%; background: var(--bureau-slate); border-bottom: 1px solid var(--bureau-gold); }
+        .archive-grid { display: grid; grid-template-columns: 1fr 300px; gap: 40px; padding: 4rem 10%; }
+        
+        .document-card { background: rgba(255,255,255,0.03); border: 1px solid #233554; padding: 30px; margin-bottom: 20px; transition: 0.3s; display: flex; gap: 25px; align-items: flex-start; }
+        .document-card:hover { border-color: var(--neural-cyan); background: rgba(100, 255, 218, 0.05); }
+        
+        .doc-icon { width: 60px; height: 80px; background: var(--bureau-navy); border: 2px solid var(--bureau-gold); display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--bureau-gold); flex-shrink: 0; }
+        
+        .category-sidebar { background: var(--bureau-slate); padding: 25px; border-radius: var(--border-radius); height: fit-content; position: sticky; top: 120px; }
+        .tag-cloud { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+        .tag { font-size: 0.65rem; background: var(--bureau-navy); padding: 5px 10px; border: 1px solid var(--border-gray); color: var(--bureau-silver); }
+    </style>
+</head>
+<body>
+
+<header class="bureau-header">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h2 class="bureau-serif" style="color: var(--bureau-gold); margin: 0;">AI-IPVB // LIBRARY</h2>
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="verification.html">VERIFY ASSET</a>
+            <span class="secure-id" style="margin-left: 20px;">ACCESS: PUBLIC RECORD</span>
+        </nav>
+    </div>
+</header>
+
+<section class="library-hero">
+    <div class="vexilla-badge">AIRTLR ARCHIVE ONLINE</div>
+    <h1 class="bureau-serif" style="font-size: 3rem;">Research & Technology Library</h1>
+    <p style="max-width: 800px; opacity: 0.8;">The central repository for AI forensic methodology, legal precedents, and the NMMMB technical standards. This archive serves as the intellectual foundation for Solomon Kin, LLC.</p>
+</section>
+
+<div class="archive-grid">
+    <main>
+        <h3 class="bureau-serif" style="color: var(--bureau-gold); margin-bottom: 2rem;">Foundational Documents</h3>
+        
+        <div class="document-card">
+            <div class="doc-icon">PDF</div>
+            <div>
+                <h4 style="margin: 0; font-size: 1.2rem;">The AI-IPVB Bible (v2.6)</h4>
+                <p style="font-size: 0.85rem; opacity: 0.7; margin: 10px 0;">The complete governing framework for forensic authorship. Includes the 100+ Prompt Rule and Manual Transformation thresholds.</p>
+                <a href="#" class="support-link" style="font-size: 0.75rem;">Download Primary Source [4.2 MB]</a>
+            </div>
+        </div>
+
+        <div class="document-card">
+            <div class="doc-icon">TXT</div>
+            <div>
+                <h4 style="margin: 0; font-size: 1.2rem;">NMMMB Technical Whitepaper</h4>
+                <p style="font-size: 0.85rem; opacity: 0.7; margin: 10px 0;">A technical deep-dive into the Neural-Manifest-Manual-Mapping-Baseline pipeline for systems engineers and NIST auditors.</p>
+                <a href="#" class="support-link" style="font-size: 0.75rem;">View Raw Manifest Data</a>
+            </div>
+        </div>
+
+        <div class="document-card">
+            <div class="doc-icon">LAW</div>
+            <div>
+                <h4 style="margin: 0; font-size: 1.2rem;">Case File: Thaler v. Perlmutter (2026 Analysis)</h4>
+                <p style="font-size: 0.85rem; opacity: 0.7; margin: 10px 0;">Bureau interpretation of the Supreme Court refusal to hear AI copyright cases and the resulting "Verification Gap."</p>
+                <a href="#" class="support-link" style="font-size: 0.75rem;">Read Legal Commentary</a>
+            </div>
+        </div>
+    </main>
+
+    <aside>
+        <div class="category-sidebar">
+            <h4 class="bureau-serif" style="margin-top: 0; font-size: 0.9rem; border-bottom: 1px solid var(--bureau-gold); padding-bottom: 10px;">Filter Archives</h4>
+            <ul style="list-style: none; padding: 0; font-size: 0.8rem;">
+                <li style="padding: 8px 0;"><input type="checkbox" checked> Forensic Methodology</li>
+                <li style="padding: 8px 0;"><input type="checkbox"> Federal Compliance</li>
+                <li style="padding: 8px 0;"><input type="checkbox"> Equity & Social Impact</li>
+                <li style="padding: 8px 0;"><input type="checkbox"> Technical API Docs</li>
+            </ul>
+            
+            <h4 class="bureau-serif" style="margin-top: 2rem; font-size: 0.9rem;">Keywords</h4>
+            <div class="tag-cloud">
+                <span class="tag">NIST-800</span>
+                <span class="tag">C2PA</span>
+                <span class="tag">SOVEREIGNTY</span>
+                <span class="tag">METADATA</span>
+                <span class="tag">PHILLY-TECH</span>
+                <span class="tag">KYC-CREATOR</span>
+            </div>
+        </div>
+    </aside>
+</div>
+
+<footer class="bureau-footer">
+    </footer>
+
+</body>
+</html>
