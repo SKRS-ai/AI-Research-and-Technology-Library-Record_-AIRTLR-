@@ -104,6 +104,77 @@
         }
     }
 </script>
+<script>
+    // THE BUREAU MASTER LEDGER (MOCK DATABASE)
+    const BUREAU_RECORDS = {
+        "SK-2026-CASE-0001": {
+            name: "Sovereign LYRA V.2",
+            tier: "Tier 3 - Sovereign",
+            architect: "Nehemiah M. Brown",
+            hash: "8f3e9a...c2b1",
+            status: "Certified",
+            modified: "54% Human-Led",
+            location: "Philadelphia Hub"
+        },
+        "SK-2026-CASE-0002": {
+            name: "Kin Canvas #04",
+            tier: "Tier 3 - Sovereign",
+            architect: "Mustafa King Brown",
+            hash: "1d4f2b...e9a7",
+            status: "Certified",
+            modified: "61% Human-Led",
+            location: "Minneapolis Hub"
+        },
+        "SK-2026-CASE-0003": {
+            name: "Fashion Bolt Concept",
+            tier: "Tier 2 - Collaborative",
+            architect: "REDACTED_USER",
+            hash: "Pending Audit...",
+            status: "In Review",
+            modified: "Processing...",
+            location: "Global Node"
+        }
+    };
 
+    function simulateAudit() {
+        const input = document.getElementById('searchID').value.trim().toUpperCase();
+        const box = document.getElementById('resultBox');
+        
+        // Visual feedback during "Search"
+        if (input.length > 5) {
+            console.log("Querying Bureau Record 01...");
+            
+            if (BUREAU_RECORDS[input]) {
+                const record = BUREAU_RECORDS[input];
+                
+                // Inject Data into Result Box
+                box.innerHTML = `
+                    <div class="badge-verified">${record.status}</div>
+                    <h3 class="bureau-serif" style="color: var(--bureau-gold);">${record.name}</h3>
+                    <p class="secure-id">HASH: ${record.hash}</p>
+                    
+                    <div class="audit-trail">
+                        <p><strong>ARCHITECT:</strong> ${record.architect}</p>
+                        <p><strong>TIER:</strong> ${record.tier}</p>
+                        <p><strong>TRANSFORMATION:</strong> ${record.modified}</p>
+                        <p><strong>ORIGIN:</strong> ${record.location}</p>
+                    </div>
+
+                    <div style="display: flex; gap: 20px; margin-top: 20px;">
+                        <button onclick="window.print()" class="btn-primary" style="font-size: 0.7rem; padding: 10px 20px;">Export Certificate</button>
+                        <a href="https://VexillaAITS.com" class="support-link" style="font-size: 0.75rem;">Support via VexillaAITS</a>
+                    </div>
+                `;
+                box.classList.add('active');
+            } else {
+                // If not found, show "Record Not Found"
+                box.innerHTML = `<p style="color: var(--security-red); text-align: center;">BUREAU WARNING: No record found for ID [${input}]. Please check the Case ID and try again.</p>`;
+                box.classList.add('active');
+            }
+        } else {
+            box.classList.remove('active');
+        }
+    }
+</script>
 </body>
 </html>
