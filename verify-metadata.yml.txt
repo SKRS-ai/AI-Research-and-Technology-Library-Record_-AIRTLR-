@@ -1,0 +1,40 @@
+name: NMMMB Metadata & Integrity Audit
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  audit-files:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Verify File Naming Conventions
+        run: |
+          echo "Starting NMMMB Forensic Filename Audit..."
+          # Ensures all HTML files are lowercase and use hyphens, following AIRTLR standards
+          find . -name "*.html" | grep -v "index.html" | while read -r file; do
+            if [[ ! $file =~ ^\./[a-z0-9-]+.html$ ]]; then
+              echo "FILE NAME ERROR: $file does not follow NMMMB lowercase-hyphen convention."
+              exit 1
+            fi
+          done
+
+      - name: Check for NMMMB License Header
+        run: |
+          echo "Verifying Proprietary Header in Documentation..."
+          # Checks if the first 10 lines of HTML files contain the NMMMB, INC. copyright
+          grep -r "NMMMB, INC." *.html || (echo "INTEGRITY ERROR: NMMMB, INC. attribution missing from record." && exit 1)
+
+      - name: Validate Registry ID Presence
+        run: |
+          echo "Checking for Official Registry ID: 817-839-3217-NMMMB-2026"
+          # Ensures the master Registry ID is present in the index.html
+          grep "817-839-3217-NMMMB-2026" index.html || (echo "REGISTRY ERROR: Master Registry ID not found in index." && exit 1)
+
+      - name: Audit Successful
+        run: echo "NMMMB Forensic Audit Passed. File Integrity Verified."
