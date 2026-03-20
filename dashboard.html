@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>
+    // THE BUREAU GATEKEEPER
+    (function() {
+        const sessionActive = localStorage.getItem('AIRTLR_SESSION_TOKEN');
+        if (!sessionActive) {
+            // Unauthorized Access Detected
+            window.location.href = 'login.html?error=unauthorized';
+        }
+    })();
+</script>
     <meta charset="UTF-8">
     <title>Dashboard | AI-IPVB Bureau Record 01</title>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
