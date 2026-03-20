@@ -3,183 +3,258 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI-IPVB | Bureau of Record & Forensic Archive</title>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>AIRTLR | AI Research and Technology Library Record</title>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bureau-blue: #003366; /* Federal Navy */
-            --bureau-gold: #b8860b;
-            --pure-white: #ffffff;
-            --off-white: #f8f9fa;
-            --legal-gray: #495057;
-            --border-light: #dee2e6;
+            --bg-dark: #0a0c10;
+            --panel-bg: rgba(255, 255, 255, 0.03);
+            --federal-blue: #004a99;
+            --accent-cyan: #00f2ff;
+            --text-main: #e0e0e0;
+            --border-glow: rgba(0, 242, 255, 0.2);
         }
 
         body {
-            background-color: var(--pure-white);
-            color: #212529;
-            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-dark);
+            background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.05) 1px, transparent 0);
+            background-size: 40px 40px;
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
             margin: 0;
             line-height: 1.6;
         }
 
-        /* CLEAN WHITE HEADER */
+        /* HEADER ENHANCEMENT */
         header {
-            background: var(--pure-white);
-            border-bottom: 3px solid var(--bureau-blue);
-            padding: 20px 10%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            border-bottom: 1px solid var(--border-glow);
+            padding: 30px 5%;
+            background: rgba(10, 12, 16, 0.95);
+            backdrop-filter: blur(10px);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
-        .logo-text {
-            font-family: 'Libre Baskerville', serif;
-            color: var(--bureau-blue);
-            text-decoration: none;
-            font-size: 1.8rem;
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            color: var(--accent-cyan);
             font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 2rem;
+            text-align: center;
+            margin: 0;
+            text-transform: uppercase;
+            background: linear-gradient(to right, #fff, var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 20px;
         }
 
         nav a {
             text-decoration: none;
-            color: var(--bureau-blue);
-            margin-left: 25px;
-            font-weight: 600;
-            font-size: 0.85rem;
+            color: var(--text-main);
+            font-size: 0.8rem;
+            font-weight: bold;
+            transition: 0.3s;
+            padding: 5px 10px;
+            border: 1px solid transparent;
+        }
+
+        nav a:hover {
+            color: var(--accent-cyan);
+            border: 1px solid var(--accent-cyan);
+            box-shadow: 0 0 10px var(--border-glow);
+        }
+
+        /* MAIN CONTENT ENHANCEMENT */
+        main {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .hero-statement {
+            background: var(--panel-bg);
+            border: 1px solid var(--border-glow);
+            padding: 40px;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            font-family: 'Libre Baskerville', serif;
+            color: var(--accent-cyan);
+            font-size: 1.4rem;
+            border-left: 4px solid var(--accent-cyan);
+            padding-left: 15px;
+            margin-bottom: 25px;
+        }
+
+        /* PILLAR CARDS */
+        .pillar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .pillar-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 25px;
+            transition: 0.4s;
+        }
+
+        .pillar-card:hover {
+            background: rgba(0, 242, 255, 0.05);
+            border-color: var(--accent-cyan);
+            transform: translateY(-5px);
+        }
+
+        .pillar-card h3 {
+            font-family: 'Libre Baskerville', serif;
+            margin-top: 0;
+            color: #fff;
+        }
+
+        /* DATA TABLE ENHANCEMENT */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 40px 0;
+            background: var(--panel-bg);
+        }
+
+        th {
+            background: rgba(0, 74, 153, 0.3);
+            color: var(--accent-cyan);
+            text-align: left;
+            padding: 15px;
+            font-size: 0.8rem;
             text-transform: uppercase;
         }
 
-        /* WHITE HERO SECTION */
-        .hero {
-            padding: 100px 15%;
-            background: var(--off-white);
-            text-align: center;
-            border-bottom: 1px solid var(--border-light);
+        td {
+            padding: 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.9rem;
         }
 
-        .hero h1 {
-            font-family: 'Libre Baskerville', serif;
-            font-size: 3rem;
-            color: var(--bureau-blue);
-            margin-bottom: 20px;
-        }
+        tr:hover { background: rgba(255,255,255,0.03); }
 
-        .hero p {
-            font-size: 1.1rem;
-            color: var(--legal-gray);
-            max-width: 800px;
-            margin: 0 auto 40px auto;
-        }
-
-        /* GLOSSARY & TIER CARDS */
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            padding: 60px 10%;
-        }
-
-        .card {
-            background: white;
-            border: 1px solid var(--border-light);
-            padding: 30px;
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            border-color: var(--bureau-gold);
-        }
-
-        .card h3 {
-            color: var(--bureau-blue);
-            font-family: 'Libre Baskerville', serif;
-            border-bottom: 2px solid var(--bureau-gold);
-            display: inline-block;
-            margin-bottom: 15px;
-        }
-
-        /* INTERNAL EMPLOYEE PORTAL */
-        .employee-gate {
-            background: var(--bureau-blue);
-            color: white;
-            padding: 40px 10%;
-            text-align: center;
-        }
-
-        .btn-white {
-            background: white;
-            color: var(--bureau-blue);
-            padding: 12px 30px;
-            text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
-            margin-top: 20px;
-        }
-
+        /* FOOTER ENHANCEMENT */
         footer {
-            background: var(--off-white);
-            padding: 60px 10% 20px 10%;
-            border-top: 1px solid var(--border-light);
+            margin-top: 100px;
+            padding: 60px 5%;
+            background: #050608;
+            border-top: 1px solid var(--border-glow);
             font-size: 0.8rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .seal-group {
+            display: flex;
+            gap: 15px;
+        }
+
+        .badge {
+            border: 1px solid var(--accent-cyan);
+            color: var(--accent-cyan);
+            padding: 5px 12px;
+            font-size: 0.65rem;
+            font-weight: bold;
+            text-transform: uppercase;
         }
     </style>
 </head>
 <body>
 
 <header>
-    <a href="index.html" class="logo-text">AI-IPVB</a>
+    <div class="top-bar">
+        <span>SECURITY LEVEL: AUTHORIZED</span>
+        <span>REGISTRY: 817-839-3217-NMMMB-2026</span>
+    </div>
+    <h1>AI Research & Technology Library Record</h1>
     <nav>
-        <a href="purpose.html">Purpose & Methodology</a>
-        <a href="library.html">Glossary</a>
-        <a href="verification.html">Verification</a>
-        <a href="login.html" style="color: var(--bureau-gold);">Employee Login</a>
+        <a href="index.html">01. ARCHIVE</a>
+        <a href="glossary.html">02. GLOSSARY</a>
+        <a href="submission.html">03. SUBMISSION</a>
+        <a href="policy.html">04. POLICY</a>
+        <a href="verification.html">05. VERIFY</a>
     </nav>
 </header>
 
-<section class="hero">
-    <h1>Bureau of Record</h1>
-    <p>Established as the primary repository for the forensic quantification of human-agency in synthetic collaborative works. This archive serves as the baseline for legal authorship verification.</p>
-    <a href="verification.html" class="btn-white" style="background: var(--bureau-blue); color: white;">Search Registry</a>
-</section>
+<main>
+    <section class="hero-statement">
+        <h2>Statement of Purpose: The AIRTLR Mandate</h2>
+        <p>The <strong>AI Research and Technology Library Record (AIRTLR)</strong> serves as the forensic foundation for Intellectual Property in the AI-human era. By implementing the <strong>NMMMB Triple-Layer Standard</strong>, we provide a verifiable path from raw neural generation to human-owned masterworks.</p>
+    </section>
 
-<section class="grid-container">
-    <div class="card">
-        <h3>NMMMB Protocol</h3>
-        <p>A multi-stage forensic audit (Neural, Manifest, Manual, Mapping, Baseline) required for asset certification.</p>
+    <div class="pillar-grid">
+        <div class="pillar-card">
+            <h3>Pillar 1: Forensic</h3>
+            <p><strong>Neural Manifest Auditing.</strong> Tracing the science of the initial generation and documenting the transition from AI baseline to human intent.</p>
+        </div>
+        <div class="pillar-card">
+            <h3>Pillar 2: Authority</h3>
+            <p><strong>The Master Creator Standard.</strong> Utilizing the NMMMB Metric to prove non-autonomous mastery and 51%+ human intervention.</p>
+        </div>
+        <div class="pillar-card">
+            <h3>Pillar 3: Technical</h3>
+            <p><strong>Blueprint Architecture.</strong> Layer-by-layer verification and seed-to-render mapping for permanent Kin Pages archiving.</p>
+        </div>
     </div>
-    <div class="card">
-        <h3>Tier 3 Sovereign</h3>
-        <p>The highest level of verification, denoting >50% human-led pixel/data transformation and full proprietary status.</p>
-    </div>
-    <div class="card">
-        <h3>Federal Alignment</h3>
-        <p>Compliant with NIST USAISI and C2PA metadata standards for digital provenance and accountability.</p>
-    </div>
-</section>
 
-<section class="employee-gate">
-    <h2>Internal Access Point</h2>
-    <p>Authentication required. This portal is strictly for Bureau Employees and Lead Architects.</p>
-    <a href="login.html" class="btn-white">Access Dashboard</a>
-</section>
+    <table>
+        <thead>
+            <tr>
+                <th>Record ID</th>
+                <th>Standard</th>
+                <th>System Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>MET-001</td><td>NMMMB Triple-Layer Manual</td><td>[ FUNCTIONAL ]</td></tr>
+            <tr><td>GLO-002</td><td>Technical Methodology Glossary</td><td>[ INDEXED ]</td></tr>
+            <tr><td>FRM-201</td><td>Protocol Submission Portal</td><td>[ ONLINE ]</td></tr>
+            <tr><td>VER-303</td><td>Public Verification Ledger</td><td>[ SYNCED ]</td></tr>
+        </tbody>
+    </table>
+</main>
 
 <footer>
-    <div style="display: flex; justify-content: space-between;">
+    <div class="footer-content">
         <div>
-            <strong>SOLOMON KIN, LLC</strong><br>
-            Philadelphia | Minneapolis
+            <strong>NMMMB, INC. | RESEARCH & TECHNOLOGY</strong><br>
+            Secure Server Node: Philadelphia / Minneapolis<br>
+            © 2026 ALL RIGHTS RESERVED.
         </div>
-        <div style="text-align: right;">
-            <strong>Technical Support:</strong> <a href="mailto:support@VexillaAITS.com">support@VexillaAITS.com</a><br>
-            Managed & Marketed by <a href="https://VexillaAITS.com">VexillaAITS.com</a>
+        <div class="seal-group">
+            <div class="badge">AI-IPVB Certified</div>
+            <div class="badge">NMMMB Audited</div>
+            <div class="badge">Kin Pages Sync</div>
         </div>
     </div>
-    <p style="text-align: center; margin-top: 40px; opacity: 0.6;">© 2026 AI Intellectual Property & Verification Bureau. All Forensic Manifests Logged.</p>
 </footer>
 
 </body>
