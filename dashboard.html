@@ -141,6 +141,21 @@
             </div>
             <a href="https://VexillaAITS.com" class="btn-primary" style="padding: 10px 20px; font-size: 0.7rem;">Open Ticket</a>
         </div>
+        <script>
+    function terminateBureauSession() {
+        // 1. Alert the Bureau Audit Log (Visual feedback)
+        const confirmExit = confirm("BUREAU NOTICE: Are you sure you want to terminate this encrypted session? All unsubmitted audit data will be purged.");
+        
+        if (confirmExit) {
+            // 2. Wipe Local Storage
+            localStorage.removeItem('AIRTLR_SESSION_TOKEN');
+            localStorage.removeItem('AIRTLR_USER_EMAIL');
+            
+            // 3. Force Redirect to Identity Gateway with a "Logged Out" status
+            window.location.href = 'login.html?status=terminated';
+        }
+    }
+</script>
     </main>
 </div>
 
