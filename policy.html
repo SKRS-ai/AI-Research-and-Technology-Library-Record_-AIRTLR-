@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-IPVB Policy Manual | NMMMB Technical Standard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --federal-blue: #002147;
+            --legal-black: #1a1a1a;
+            --paper-white: #ffffff;
+            --border-gray: #d1d1d1;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+            color: var(--legal-black);
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .document-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--paper-white);
+            padding: 60px;
+            border: 1px solid var(--border-gray);
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        /* WATERMARK EFFECT */
+        .document-container::after {
+            content: "OFFICIAL RECORD";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            font-size: 5rem;
+            color: rgba(0,0,0,0.03);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 2px solid var(--federal-blue);
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            margin: 10px 0;
+        }
+
+        h2 {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 1.2rem;
+            color: var(--federal-blue);
+            border-bottom: 1px solid var(--border-gray);
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+
+        p, li {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        .clause-number {
+            font-weight: bold;
+            color: var(--federal-blue);
+            margin-right: 10px;
+        }
+
+        .policy-quote {
+            background: #f9f9f9;
+            border-left: 4px solid var(--federal-blue);
+            padding: 20px;
+            font-style: italic;
+            margin: 20px 0;
+        }
+
+        nav { text-align: center; margin-bottom: 20px; font-size: 0.8rem; }
+        nav a { text-decoration: none; color: var(--federal-blue); font-weight: bold; margin: 0 10px; }
+
+        footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-gray);
+            font-size: 0.75rem;
+            text-align: center;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html">ARCHIVE HOME</a> | 
+    <a href="glossary.html">GLOSSARY</a> | 
+    <a href="submission.html">SUBMIT FOR AUDIT</a>
+</nav>
+
+<div class="document-container">
+    <header>
+        <p style="font-weight: bold; font-size: 0.75rem;">AI-IPVB POLICY MANUAL | REV. 2026.03</p>
+        <h1>Standards for Non-Autonomous Verification</h1>
+    </header>
+
+    <section>
+        <h2>1.0 General Provisions</h2>
+        <p><span class="clause-number">1.1</span> All visual art, audio compositions, and technical blueprints submitted for certification must pass the <strong>NMMMB Audit</strong> (Neural Manifest Manual Modification Baseline).</p>
+        <p><span class="clause-number">1.2</span> This process involves a rigorous <strong>Layer Verification</strong> to ensure the "Manual" contribution exceeds the "Neural" generation, establishing a permanent record in the Kin Pages Database.</p>
+    </section>
+
+    <section>
+        <h2>2.0 The 51% Modification Threshold</h2>
+        <p><span class="clause-number">2.1</span> Ownership is not granted to prompt-only outputs. Certification requires a minimum <strong>NMMMB Metric</strong> score of 51% human input.</p>
+        <div class="policy-quote">
+            "The Master Creator must demonstrate that the final render is a derivative work born from human-led transformation, where the AI functioned as a passive toolset under master command."
+        </div>
+    </section>
+
+    <section>
+        <h2>3.0 Forensic Documentation Requirements</h2>
+        <p><span class="clause-number">3.1</span> <strong>Neural Manifest:</strong> The registrant must provide a complete history of the seed, node, and iterative prompts used to initialize the neural baseline.</p>
+        <p><span class="clause-number">3.2</span> <strong>Layer Mapping:</strong> Evidence of manual masking, structural overpainting, or parameter-tuning must be archived as a 'Chain of Provenance' from seed to final render.</p>
+    </section>
+
+    <section>
+        <h2>4.0 Registry & Kin Pages Integration</h2>
+        <p><span class="clause-number">4.1</span> Upon successful audit, the asset shall be assigned a unique <strong>Blueprint ID</strong> and locked into the Kin Pages Global Ledger.</p>
+        <p><span class="clause-number">4.2</span> Revocation: NMMMB, INC. reserves the right to revoke certification if the Neural Manifest is found to be falsified or if human intervention falls below the documented metric.</p>
+    </section>
+
+    <footer>
+        OFFICIAL PROPERTY OF NMMMB, INC.<br>
+        AUTHORIZED FOR USE BY THE BUREAU OF AI ARTS & CREATIVE WORKS<br>
+        © 2026 ALL RIGHTS RESERVED
+    </footer>
+</div>
+
+</body>
+</html>
