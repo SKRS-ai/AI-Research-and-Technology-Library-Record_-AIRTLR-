@@ -3,110 +3,259 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI-IPVB | AI Intellectual Property & Verification Bureau</title>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/master-bureau.css">
+    <title>AIRTLR | AI Research and Technology Library Record</title>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0a0c10;
+            --panel-bg: rgba(255, 255, 255, 0.03);
+            --federal-blue: #004a99;
+            --accent-cyan: #00f2ff;
+            --text-main: #e0e0e0;
+            --border-glow: rgba(0, 242, 255, 0.2);
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.05) 1px, transparent 0);
+            background-size: 40px 40px;
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* HEADER ENHANCEMENT */
+        header {
+            border-bottom: 1px solid var(--border-glow);
+            padding: 30px 5%;
+            background: rgba(10, 12, 16, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            color: var(--accent-cyan);
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 2rem;
+            text-align: center;
+            margin: 0;
+            text-transform: uppercase;
+            background: linear-gradient(to right, #fff, var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-size: 0.8rem;
+            font-weight: bold;
+            transition: 0.3s;
+            padding: 5px 10px;
+            border: 1px solid transparent;
+        }
+
+        nav a:hover {
+            color: var(--accent-cyan);
+            border: 1px solid var(--accent-cyan);
+            box-shadow: 0 0 10px var(--border-glow);
+        }
+
+        /* MAIN CONTENT ENHANCEMENT */
+        main {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .hero-statement {
+            background: var(--panel-bg);
+            border: 1px solid var(--border-glow);
+            padding: 40px;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            font-family: 'Libre Baskerville', serif;
+            color: var(--accent-cyan);
+            font-size: 1.4rem;
+            border-left: 4px solid var(--accent-cyan);
+            padding-left: 15px;
+            margin-bottom: 25px;
+        }
+
+        /* PILLAR CARDS */
+        .pillar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .pillar-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 25px;
+            transition: 0.4s;
+        }
+
+        .pillar-card:hover {
+            background: rgba(0, 242, 255, 0.05);
+            border-color: var(--accent-cyan);
+            transform: translateY(-5px);
+        }
+
+        .pillar-card h3 {
+            font-family: 'Libre Baskerville', serif;
+            margin-top: 0;
+            color: #fff;
+        }
+
+        /* DATA TABLE ENHANCEMENT */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 40px 0;
+            background: var(--panel-bg);
+        }
+
+        th {
+            background: rgba(0, 74, 153, 0.3);
+            color: var(--accent-cyan);
+            text-align: left;
+            padding: 15px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.9rem;
+        }
+
+        tr:hover { background: rgba(255,255,255,0.03); }
+
+        /* FOOTER ENHANCEMENT */
+        footer {
+            margin-top: 100px;
+            padding: 60px 5%;
+            background: #050608;
+            border-top: 1px solid var(--border-glow);
+            font-size: 0.8rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .seal-group {
+            display: flex;
+            gap: 15px;
+        }
+
+        .badge {
+            border: 1px solid var(--accent-cyan);
+            color: var(--accent-cyan);
+            padding: 5px 12px;
+            font-size: 0.65rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+    </style>
 </head>
 <body>
 
-<header class="bureau-header">
-    <div style="display: flex; justify-content: space-between; align-items: center;">
-        <div class="logo-area">
-            <h2 class="bureau-serif" style="color: var(--bureau-gold); margin: 0; font-size: 1.5rem;">AI-IPVB</h2>
-            <div style="font-size: 0.6rem; letter-spacing: 3px; opacity: 0.7;">A DIVISION OF SOLOMON KIN, LLC</div>
-        </div>
-        <nav>
-            <a href="index.html">The Bible</a>
-            <a href="submit.html">Audit Portal</a>
-            <a href="market.html">Subscriptions</a>
-            <a href="grants.html">Grants & Public Interest</a>
-            <a href="#login" class="cta-button" style="padding: 8px 15px; font-size: 0.7rem; margin-left: 20px;">SECURE LOGIN</a>
-        </nav>
+<header>
+    <div class="top-bar">
+        <span>SECURITY LEVEL: AUTHORIZED</span>
+        <span>REGISTRY: 817-839-3217-NMMMB-2026</span>
     </div>
+    <h1>AI Research & Technology Library Record</h1>
+    <nav>
+        <a href="index.html">01. ARCHIVE</a>
+        <a href="glossary.html">02. GLOSSARY</a>
+        <a href="submission.html">03. SUBMISSION</a>
+        <a href="policy.html">04. POLICY</a>
+        <a href="verification.html">05. VERIFY</a>
+    </nav>
 </header>
 
-<section class="hero">
-    <div class="grant-ready">NIST USAISI ALIGNED | FEDRAMP READY</div>
-    <h1>The Forensic Standard of Human Authorship</h1>
-    <p>The AI Intellectual Property & Verification Bureau (AI-IPVB) is the world’s leading research and information entity for the forensic validation of Human-AI collaboration. We bridge the gap between autonomous synthetic output and legally protectable Intellectual Property.</p>
-    
-    <div class="signature-container" id="nmmmb-lock">
-        <span class="nmmmb-text">NMMMB</span>
-    </div>
-    
-    <div style="margin-top: 3rem;">
-        <a href="submit.html" class="btn-primary">INITIATE FORENSIC AUDIT</a>
-    </div>
-</section>
+<main>
+    <section class="hero-statement">
+        <h2>Statement of Purpose: The AIRTLR Mandate</h2>
+        <p>The <strong>AI Research and Technology Library Record (AIRTLR)</strong> serves as the forensic foundation for Intellectual Property in the AI-human era. By implementing the <strong>NMMMB Triple-Layer Standard</strong>, we provide a verifiable path from raw neural generation to human-owned masterworks.</p>
+    </section>
 
-<section class="grid-section">
-    <div class="tier-card seal-tier-1">
-        <h3>Tier 1: Assisted</h3>
-        <p>Neural-Heavy. Verified model integrity for internal prototyping and technical safety. Proves data hygiene.</p>
-        <span class="secure-id">NON-COMMERCIAL</span>
+    <div class="pillar-grid">
+        <div class="pillar-card">
+            <h3>Pillar 1: Forensic</h3>
+            <p><strong>Neural Manifest Auditing.</strong> Tracing the science of the initial generation and documenting the transition from AI baseline to human intent.</p>
+        </div>
+        <div class="pillar-card">
+            <h3>Pillar 2: Authority</h3>
+            <p><strong>The Master Creator Standard.</strong> Utilizing the NMMMB Metric to prove non-autonomous mastery and 51%+ human intervention.</p>
+        </div>
+        <div class="pillar-card">
+            <h3>Pillar 3: Technical</h3>
+            <p><strong>Blueprint Architecture.</strong> Layer-by-layer verification and seed-to-render mapping for permanent Kin Pages archiving.</p>
+        </div>
     </div>
-    <div class="tier-card seal-tier-2">
-        <h3>Tier 2: Collaborative</h3>
-        <p>Master-Directed. 100+ iteration audit proving substantial human agency. The <strong>Cast Ai Stars</strong> standard.</p>
-        <span class="secure-id">COMMERCIAL USE</span>
-    </div>
-    <div class="tier-card seal-tier-3">
-        <h3>Tier 3: Sovereign</h3>
-        <p>Manual-Mastered. 50%+ human transformation audit. The <strong>NMMMB Gallery</strong> standard for full IP ownership.</p>
-        <span class="secure-id">SOVEREIGN IP</span>
-    </div>
-</section>
 
-<section style="padding: 6rem 10%; background: #fff; color: var(--bureau-navy);">
-    <div style="max-width: 900px; margin: 0 auto;">
-        <h2 class="bureau-serif" style="font-size: 2.5rem;">The Ultimate Vision</h2>
-        <p style="font-size: 1.1rem; line-height: 1.8;">
-            All visual art submitted for certification must pass the <strong>NMMMB Audit</strong> (Neural Manifest Manual Modification Baseline). This process involves a rigorous <strong>Layer Verification</strong> to ensure the 'Manual' contribution exceeds the 'Neural' generation, establishing a permanent record in the <strong>Kin Pages Database</strong>.
-        </p>
-        <p>By establishing this "UL Labs" for AI, we ensure that the human "spark"—the same one we’ve carried from the IT data centers of Minneapolis to the creative studios of Philadelphia—remains the legal owner of the future.</p>
-    </div>
-</section>
+    <table>
+        <thead>
+            <tr>
+                <th>Record ID</th>
+                <th>Standard</th>
+                <th>System Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>MET-001</td><td>NMMMB Triple-Layer Manual</td><td>[ FUNCTIONAL ]</td></tr>
+            <tr><td>GLO-002</td><td>Technical Methodology Glossary</td><td>[ INDEXED ]</td></tr>
+            <tr><td>FRM-201</td><td>Protocol Submission Portal</td><td>[ ONLINE ]</td></tr>
+            <tr><td>VER-303</td><td>Public Verification Ledger</td><td>[ SYNCED ]</td></tr>
+        </tbody>
+    </table>
+</main>
 
-<footer class="bureau-footer">
-    <div class="footer-column">
-        <h4>Legal & Compliance</h4>
-        <a href="#">Terms of Service</a>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Audit Procedures</a>
-        <a href="#">IP Dispute Resolution</a>
-    </div>
-    <div class="footer-column">
-        <h4>Innovation & Education</h4>
-        <a href="grants.html">Grant Alignments</a>
-        <a href="#">NMMMB Whitepaper</a>
-        <a href="#">AI Literacy Initiative</a>
-        <a href="#">Scholarship Program</a>
-    </div>
-    <div class="footer-column">
-        <h4>Support & Logistics</h4>
-        <p style="font-size: 0.8rem; margin-bottom: 10px;">Managed technical assistance provided by:</p>
-        <a href="https://VexillaAITS.com" class="support-link">VexillaAITS.com</a>
-        <a href="#">System Status</a>
-        <a href="dashboard.html">Bureau Record 01 Login</a>
-    </div>
-    <div style="grid-column: 1 / -1; text-align: center; margin-top: 4rem; opacity: 0.5; font-size: 0.7rem;">
-        <p>© 2026 SOLOMON KIN, LLC. ALL RIGHTS RESERVED. JURISDICTION: PHILADELPHIA | MINNEAPOLIS</p>
-        <p>Notice: All protocols, seals, and frameworks are the proprietary intellectual property of Solomon Kin, LLC. Unauthorized replication is subject to federal and international IP litigation.</p>
+<footer>
+    <div class="footer-content">
+        <div>
+            <strong>NMMMB, INC. | RESEARCH & TECHNOLOGY</strong><br>
+            Secure Server Node: Philadelphia / Minneapolis<br>
+            © 2026 ALL RIGHTS RESERVED.
+        </div>
+        <div class="seal-group">
+            <div class="badge">AI-IPVB Certified</div>
+            <div class="badge">NMMMB Audited</div>
+            <div class="badge">Kin Pages Sync</div>
+        </div>
     </div>
 </footer>
-
-<script>
-    // Intersection Observer to trigger the NMMMB "Lock" animation
-    const lock = document.getElementById('nmmmb-lock');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                lock.classList.add('locked');
-            }
-        });
-    }, { threshold: 0.5 });
-    observer.observe(lock);
-</script>
 
 </body>
 </html>
