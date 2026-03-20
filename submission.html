@@ -196,6 +196,35 @@
     </div>
     <p id="auditStatus" style="color:var(--neural-cyan); font-family:'Courier New', monospace; margin-top:20px; letter-spacing:2px;">INITIALIZING NEURAL BASELINE SCAN...</p>
 </div>
+document.getElementById('executeAuditBtn').addEventListener('click', function() {
+    const overlay = document.getElementById('auditOverlay');
+    const statusText = document.getElementById('auditStatus');
+    
+    // 1. Show the Forensic Processing Overlay
+    overlay.style.display = 'flex';
+    
+    // 2. Simulate the NMMMB Stages
+    const stages = [
+        { text: "N: ANALYZING NEURAL BASELINE...", delay: 1000 },
+        { text: "M: VERIFYING MANIFEST PROMPT-CHAIN...", delay: 2500 },
+        { text: "M: CALCULATING MANUAL TRANSFORMATION %...", delay: 4000 },
+        { text: "M: MAPPING PROVENANCE TO BUREAU RECORD 01...", delay: 5500 },
+        { text: "B: GENERATING KIN PAGES HASH...", delay: 7000 },
+        { text: "AUDIT COMPLETE. SIGNING MANIFEST.", delay: 8500 }
+    ];
 
+    stages.forEach((stage, index) => {
+        setTimeout(() => {
+            statusText.innerText = stage.text;
+            // Play a subtle 'beep' sound here if you want to increase the IT vibe
+        }, stage.delay);
+    });
+
+    // 3. Final Redirection to the Verification or Dashboard page
+    setTimeout(() => {
+        // Replace with your actual confirmation page or back to dashboard
+        window.location.href = 'verification.html?status=success&id=SK-' + Math.floor(Math.random() * 1000000);
+    }, 9500);
+});
 </body>
 </html>
