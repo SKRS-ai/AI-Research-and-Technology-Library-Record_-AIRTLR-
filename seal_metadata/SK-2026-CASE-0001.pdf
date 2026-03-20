@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!-- saved from url=(0095)https://skrs-ai.github.io/AI-Research-and-Technology-Library-Record_-AIRTLR-/generate_cert.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>OFFICIAL BUREAU RECORD | SK-2026-CASE-0001</title>
+    <style>
+        @page { size: letter; margin: 0; }
+        body { font-family: 'Times New Roman', serif; background: #fff; margin: 0; padding: 0; color: #000; }
+        .border-outer {
+            border: 25px solid #c5a059; /* Bureau Gold */
+            height: 10.5in;
+            margin: 0.25in;
+            padding: 0.5in;
+            position: relative;
+            box-sizing: border-box;
+            background-image: radial-gradient(#c5a059 0.5px, transparent 0.5px);
+            background-size: 20px 20px; /* Subtle security grid */
+        }
+        .header { text-align: center; border-bottom: 3px double #000; padding-bottom: 20px; }
+        .bureau-logo { font-size: 32pt; font-weight: bold; letter-spacing: 8px; margin: 0; color: #0a192f; }
+        .subtitle { font-size: 10pt; letter-spacing: 3px; text-transform: uppercase; font-weight: bold; }
+        
+        .content { text-align: center; margin-top: 1in; }
+        .cert-title { font-size: 38pt; font-style: italic; color: #0a192f; font-family: 'Georgia', serif; }
+        .asset-name { font-size: 28pt; font-weight: bold; margin: 20px 0; border-bottom: 2px solid #c5a059; display: inline-block; padding: 0 60px; text-transform: uppercase; }
+        
+        .data-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            margin: 0.8in auto;
+            max-width: 5.5in;
+            text-align: left;
+            font-size: 11pt;
+            line-height: 2.5;
+            border: 1px solid #eee;
+            padding: 20px;
+            background: rgba(255,255,255,0.8);
+        }
+        .seal-area {
+            position: absolute;
+            bottom: 0.6in;
+            right: 0.6in;
+            width: 160px;
+            height: 160px;
+            border: 4px double #c5a059;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 9pt;
+            text-align: center;
+            color: #c5a059;
+            font-weight: bold;
+            background: #fff;
+            transform: rotate(-15deg);
+        }
+        .signature-line {
+            position: absolute;
+            bottom: 1in;
+            left: 0.6in;
+            border-top: 2px solid #000;
+            width: 3in;
+            text-align: center;
+        }
+        .footer-note {
+            position: absolute;
+            bottom: 0.3in;
+            width: 100%;
+            text-align: center;
+            font-size: 7pt;
+            color: #666;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="border-outer">
+        <div class="header">
+            <p class="bureau-logo">AI-IPVB</p>
+            <p class="subtitle">AI Intellectual Property &amp; Verification Bureau</p>
+            <p style="font-size: 8pt; margin-top: 5px;">Managed &amp; Marketed by VexillaAITS.com</p>
+        </div>
+
+        <div class="content">
+            <p style="font-size: 14pt; letter-spacing: 1px;">BY AUTHORITY OF SOLOMON KIN, LLC</p>
+            <div class="cert-title">Certificate of Sovereignty</div>
+            <div class="asset-name">LYRA V.2</div>
+            
+            <p style="margin-top: 30px; font-size: 12pt; max-width: 5.2in; margin-left: auto; margin-right: auto; line-height: 1.6;">
+                This document serves as an official forensic verification that the aforementioned asset has passed the 
+                <b>NMMMB Protocol Audit</b>. The Bureau hereby recognizes the 54% manual transformation 
+                as meeting the threshold for <b>Tier 3 Sovereign Work</b>.
+            </p>
+
+            <div class="data-grid">
+                <div><b>CASE ID:</b> SK-2026-CASE-0001</div>
+                <div><b>AUDIT DATE:</b> MARCH 20, 2026</div>
+                <div><b>TRANSFORMATION:</b> 54.2% MANUAL</div>
+                <div><b>LEDGER NODE:</b> PHILADELPHIA-01</div>
+                <div><b>ARCHITECT:</b> NEHEMIAH M. BROWN</div>
+                <div><b>REGISTRY:</b> KIN PAGES [VERIFIED]</div>
+            </div>
+        </div>
+
+        <div class="signature-line">
+            <p style="margin: 0; font-family: &#39;Brush Script MT&#39;, cursive; font-size: 18pt;">Nehemiah M. Brown</p>
+            <small>LEAD ARCHITECT | SOLOMON KIN, LLC</small>
+        </div>
+
+        <div class="seal-area">
+            OFFICIAL SEAL<br>NMMMB TIER 3<br>SOVEREIGN
+        </div>
+
+        <div class="footer-note">
+            VALIDATION HASH: 8f3e9a721b664d90a1c2b1f88e99321ff0a2 | VERIFY AT: skrs-ai.github.io/verification.html
+        </div>
+    </div>
+
+</body></html>
