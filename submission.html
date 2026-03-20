@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM AIRTLR-001 | NMMMB Protocol Registration</title>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --federal-blue: #002147;
+            --legal-black: #1a1a1a;
+            --paper-white: #ffffff;
+            --border-gray: #d1d1d1;
+            --error-red: #8b0000;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f4f4;
+            color: var(--legal-black);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .form-container {
+            max-width: 850px;
+            margin: 40px auto;
+            background: var(--paper-white);
+            padding: 50px;
+            border: 1px solid var(--border-gray);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .form-header {
+            text-align: center;
+            border-bottom: 3px double var(--legal-black);
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+        }
+
+        .form-header h1 {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        .form-header p {
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: var(--federal-blue);
+        }
+
+        .section-title {
+            background: #eee;
+            padding: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            margin: 30px 0 15px 0;
+            border-left: 4px solid var(--federal-blue);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            font-size: 0.85rem;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"], input[type="url"], textarea, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--border-gray);
+            font-family: inherit;
+            box-sizing: border-box;
+        }
+
+        .metric-box {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            background: #f9f9f9;
+            padding: 15px;
+            border: 1px dashed var(--border-gray);
+        }
+
+        .attestation {
+            font-size: 0.85rem;
+            font-style: italic;
+            background: #fffbe6;
+            padding: 15px;
+            border: 1px solid #ffe58f;
+            margin-top: 30px;
+        }
+
+        .submit-btn {
+            display: block;
+            width: 100%;
+            background: var(--federal-blue);
+            color: white;
+            padding: 15px;
+            border: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            margin-top: 20px;
+            letter-spacing: 1px;
+        }
+
+        .submit-btn:hover {
+            background: #003366;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            margin-top: 40px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <div class="form-header">
+        <h1>Form AIRTLR-001: NMMMB Protocol Registration</h1>
+        <p>OFFICIAL INTELLECTUAL PROPERTY METHODOLOGY RECORD | NMMMB, INC.</p>
+    </div>
+
+    <form action="#" method="POST">
+        <div class="section-title">Section I: Origin & Neural Manifest (Forensic)</div>
+        <div class="form-group">
+            <label>Master Creator / Entity Legal Name *</label>
+            <input type="text" placeholder="e.g. NMMMB, INC. / Nehemiah M. Brown" required>
+        </div>
+        <div class="form-group">
+            <label>Neural Signature (AI Node/Checkpoint ID) *</label>
+            <input type="text" placeholder="e.g. StableDiffusion-XL-v1.0-Base" required>
+        </div>
+        <div class="form-group">
+            <label>Manifest History URL (Link to Prompt Logs)</label>
+            <input type="url" placeholder="https://github.com/user/project/logs">
+        </div>
+
+        <div class="section-title">Section II: Manual Modification & Metric (Authority)</div>
+        <div class="form-group">
+            <label>Summary of Manual Intervention (Digital/Physical Edits) *</label>
+            <textarea rows="4" placeholder="Detail the specific layers, in-painting, and manual structural changes made to the neural baseline..."></textarea>
+        </div>
+        <div class="metric-box">
+            <div>
+                <label>Human Contribution %</label>
+                <input type="text" style="width: 80px;" placeholder="51%+">
+            </div>
+            <div>
+                <label>Machine Contribution %</label>
+                <input type="text" style="width: 80px;" placeholder="<49%">
+            </div>
+            <div style="font-size: 0.75rem; color: #555;">
+                *NMMMB Standard requires 51% Human Input for Certification.
+            </div>
+        </div>
+
+        <div class="section-title">Section III: Technical Framework (Blueprint)</div>
+        <div class="form-group">
+            <label>Provenance Mapping (Seed-to-Render ID)</label>
+            <input type="text" placeholder="Hash or Unique Tracking ID">
+        </div>
+        <div class="form-group">
+            <label>Associated System Integration</label>
+            <select>
+                <option>None / Standalone Record</option>
+                <option>Cast AI Stars (Character Profile)</option>
+                <option>Solomon Kin Records (Sonic IP)</option>
+                <option>CareerKin (Professional Credential)</option>
+            </select>
+        </div>
+
+        <div class="attestation">
+            <input type="checkbox" required>
+            <strong>Official Attestation:</strong> I hereby certify that the information provided is a true and forensic record of the human-led creative process. I acknowledge that ownership is derived solely from the Manual Modification documented herein under the NMMMB Standard.
+        </div>
+
+        <button type="submit" class="submit-btn">Submit for Forensic Audit Review</button>
+    </form>
+
+    <footer>
+        &copy; 2026 NMMMB, INC. | AIRTLR-REGISTRY-SYS-ACTIVE
+    </footer>
+</div>
+
+</body>
+</html>
