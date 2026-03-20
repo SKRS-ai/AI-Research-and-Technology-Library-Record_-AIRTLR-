@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Identity Gateway | AI-IPVB Bureau Login</title>
+    <link rel="stylesheet" href="css/master-bureau.css">
+    <style>
+        .auth-box { max-width: 400px; margin: 100px auto; background: var(--bureau-slate); padding: 40px; border: 1px solid var(--bureau-gold); position: relative; }
+        .tab-system { display: flex; margin-bottom: 20px; border-bottom: 1px solid #233554; }
+        .tab { flex: 1; text-align: center; padding: 10px; cursor: pointer; color: var(--bureau-silver); font-size: 0.8rem; }
+        .tab.active { color: var(--bureau-gold); border-bottom: 2px solid var(--bureau-gold); }
+        .social-btn { width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #233554; background: #020c1b; color: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 0.8rem; }
+        .social-btn:hover { background: #112240; }
+    </style>
+</head>
+<body>
+
+<div class="auth-box">
+    <div class="secure-id" style="text-align:center; margin-bottom: 20px;">SECURE ACCESS POINT</div>
+    
+    <div class="tab-system">
+        <div class="tab active" id="loginTab">LOGIN</div>
+        <div class="tab" id="regTab">REGISTER</div>
+    </div>
+
+    <div id="socialAuth">
+        <button class="social-btn">Continue with Google</button>
+        <button class="social-btn">Continue with Microsoft</button>
+        <button class="social-btn">Continue with X (Twitter)</button>
+        <div style="text-align:center; margin: 15px 0; font-size: 0.7rem; color: var(--bureau-silver);">— OR USE BUREAU ID —</div>
+    </div>
+
+    <form id="authForm">
+        <input type="email" id="userEmail" placeholder="Email Address" required class="required-gov">
+        <input type="password" id="userPass" placeholder="Secure Password" required>
+        
+        <div id="regFields" style="display:none;">
+            <input type="text" placeholder="First Name" class="required-gov">
+            <input type="text" placeholder="Last Name" class="required-gov">
+            <input type="text" placeholder="Ballot Address (Per Driver's License)" class="required-gov">
+        </div>
+
+        <button type="submit" class="btn-primary" style="width: 100%;">Process Access</button>
+    </form>
+</div>
+
+<script>
+    // Toggle between Login and Register
+    document.getElementById('regTab').onclick = () => {
+        document.getElementById('regFields').style.display = 'block';
+        document.getElementById('regTab').classList.add('active');
+        document.getElementById('loginTab').classList.remove('active');
+    };
+
+    document.getElementById('loginTab').onclick = () => {
+        document.getElementById('regFields').style.display = 'none';
+        document.getElementById('loginTab').classList.add('active');
+        document.getElementById('regTab').classList.remove('active');
+    };
+
+    // Simulate Auth and Redirect to Dashboard
+    document.getElementById('authForm').onsubmit = (e) => {
+        e.preventDefault();
+        const email = document.getElementById('userEmail').value;
+        // In a real IT environment, this token comes from a database (Firebase/Supabase)
+        localStorage.setItem('AIRTLR_SESSION_TOKEN', 'SK-SESSION-' + btoa(email));
+        localStorage.setItem('AIRTLR_USER_EMAIL', email);
+        
+        window.location.href = 'dashboard.html';
+    };
+</script>
+
+</body>
+</html>
