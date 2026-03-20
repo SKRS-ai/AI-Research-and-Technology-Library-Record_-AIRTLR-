@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Audit Tracker | AI-IPVB Record 01</title>
+    <link rel="stylesheet" href="css/master-bureau.css">
+    <style>
+        .tracker-container { max-width: 800px; margin: 100px auto; padding: 0 20px; }
+        .progress-track { display: flex; justify-content: space-between; position: relative; margin-bottom: 50px; }
+        .progress-track::before { content: ''; position: absolute; top: 15px; left: 0; width: 100%; height: 2px; background: #233554; z-index: 1; }
+        .step { width: 30px; height: 30px; background: var(--bureau-navy); border: 2px solid #233554; border-radius: 50%; z-index: 2; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; color: #233554; }
+        .step.active { border-color: var(--neural-cyan); color: var(--neural-cyan); box-shadow: 0 0 10px var(--neural-cyan); }
+        .terminal { background: #020c1b; border: 1px solid #233554; padding: 20px; font-family: 'Courier New', monospace; font-size: 0.8rem; color: var(--neural-cyan); height: 200px; overflow-y: auto; }
+    </style>
+</head>
+<body>
+
+<div class="tracker-container">
+    <h2 class="bureau-serif" style="color: var(--bureau-gold);">Live Forensic Progress</h2>
+    <p style="font-size: 0.8rem; opacity: 0.7;">Case ID: SK-2026-CASE-0003 | Tier: Collaborative</p>
+
+    <div class="progress-track">
+        <div class="step active">N</div>
+        <div class="step active">M</div>
+        <div class="step">M</div>
+        <div class="step">M</div>
+        <div class="step">B</div>
+    </div>
+
+    <div class="terminal">
+        <p>> Initializing Neural Baseline Check...</p>
+        <p>> Model: Lyria-3-Pro verified.</p>
+        <p>> Manifest Scan: 100+ Prompt requirement MET.</p>
+        <p>> Analyzing Manual Pixel Transformation...</p>
+        <p style="color: var(--bureau-gold);">> STAGE: MANUAL MODIFICATION IN PROGRESS (Current: 32%)</p>
+        <p>> Awaiting Lead Architect Final Review...</p>
+    </div>
+    
+    <div style="margin-top: 30px; text-align: right;">
+        <a href="dashboard.html" class="support-link">Back to Dashboard</a>
+    </div>
+</div>
+
+</body>
+</html>
