@@ -1,0 +1,43 @@
+{
+  "bureau_metadata": {
+    "case_id": "SK-2026-CASE-0001",
+    "registry": "AI-IPVB / AIRTLR",
+    "timestamp_utc": "2026-03-20T12:00:00Z",
+    "issuing_authority": "Solomon Kin, LLC",
+    "lead_architect": "Nehemiah M. Brown",
+    "support_node": "VexillaAITS.com"
+  },
+  "creator_identity": {
+    "legal_name": "REDACTED_FOR_PRIVACY",
+    "ballot_address_verified": true,
+    "digital_signature_hash": "nmbb_auth_9921_x",
+    "residency_hub": "Philadelphia, PA"
+  },
+  "nmmmb_protocol_verification": {
+    "n_neural_baseline": {
+      "model_used": "Sora v1.2 / Lyria 3",
+      "data_safety_score": "98/100",
+      "non_infringement_check": "PASS"
+    },
+    "m_manifest_audit": {
+      "total_iterations": 142,
+      "human_instruction_weight": "High",
+      "prompt_complexity_index": "Tier 3 Standard"
+    },
+    "m_manual_modification": {
+      "transformation_percentage": "54%",
+      "tools_used": ["Adobe Photoshop", "After Effects", "Custom Python Refactor"],
+      "human_led_edits": "Manual pixel interpolation, layer masking, and structural color grading."
+    },
+    "m_mapping_provenance": {
+      "chain_of_custody": "Local -> VexillaAITS -> Bureau Record 01",
+      "storage_node": "skrs-ai.github.io"
+    },
+    "b_baseline_certification": {
+      "final_tier": "Tier 3 - Sovereign",
+      "ip_status": "Human-Owned Proprietary",
+      "expiration": "Permanent"
+    }
+  },
+  "legal_declaration": "I, Nehemiah M. Brown, Lead Architect of the AI-IPVB, hereby certify that this asset has passed the NMMMB Forensic Audit and represents a Sovereign Human-AI Collaborative work under the 2026 Federal Standards."
+}
