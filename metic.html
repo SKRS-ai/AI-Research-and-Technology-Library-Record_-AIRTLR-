@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NMMMB Metric | Computational IP Standards</title>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg-dark: #0a0c10; --panel-bg: rgba(255, 255, 255, 0.03); --accent-cyan: #00f2ff; --text-main: #e0e0e0; }
+        body { background-color: var(--bg-dark); color: var(--text-main); font-family: 'Inter', sans-serif; margin: 0; line-height: 1.6; }
+        header { border-bottom: 1px solid rgba(0, 242, 255, 0.2); padding: 30px 5%; background: rgba(10, 12, 16, 0.95); }
+        h1 { font-family: 'Libre Baskerville', serif; text-align: center; color: var(--accent-cyan); text-transform: uppercase; }
+        main { max-width: 900px; margin: 60px auto; padding: 0 20px; }
+        .formula-box { background: rgba(0, 242, 255, 0.05); border: 1px solid var(--accent-cyan); padding: 30px; border-radius: 4px; text-align: center; font-family: 'Courier New', monospace; font-size: 1.2rem; margin: 30px 0; }
+        .threshold-indicator { display: flex; align-items: center; justify-content: space-between; background: #1a1a1a; padding: 20px; border-radius: 50px; border: 1px solid #333; }
+        .human-side { color: var(--accent-cyan); font-weight: bold; }
+        .machine-side { color: #555; }
+        nav { text-align: center; margin-bottom: 20px; }
+        nav a { color: var(--text-main); text-decoration: none; margin: 0 15px; font-size: 0.8rem; font-weight: bold; }
+    </style>
+</head>
+<body>
+<header>
+    <h1>NMMMB Metric: 51% Threshold</h1>
+    <nav><a href="index.html">01. ARCHIVE</a> | <a href="gradient.html">02. MUSTAFA GRADIENT</a></nav>
+</header>
+<main>
+    <h2>The Authorship Equation</h2>
+    <p>The NMMMB Metric is the proprietary numerical calculation used to determine the ratio of Human vs. Machine input. To qualify for <strong>Bureau Certification</strong>, an asset must exceed the 51% Human Input threshold.</p>
+    
+    <div class="formula-box">
+        H_i = (M_p + M_d + M_l) / (N_b) > 0.51
+    </div>
+
+    <h3>Weight Factors:</h3>
+    <ul>
+        <li><strong>M_p:</strong> Manual Prompt Iteration (Human Intent)</li>
+        <li><strong>M_d:</strong> Digital Transformation (Over-painting/Layering)</li>
+        <li><strong>M_l:</strong> Logical Architecture (Metastructure Design)</li>
+        <li><strong>N_b:</strong> Neural Baseline (Raw AI Output)</li>
+    </ul>
+
+    <div class="threshold-indicator">
+        <span class="human-side">HUMAN: 51%+ (CERTIFIED)</span>
+        <div style="width: 2px; height: 30px; background: #444;"></div>
+        <span class="machine-side">MACHINE: 49%- (NON-IP)</span>
+    </div>
+</main>
+</body>
+</html>
