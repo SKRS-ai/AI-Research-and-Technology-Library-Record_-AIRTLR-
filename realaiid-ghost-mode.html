@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sovereign Identity | RealAIID.com</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+        }
+      }
+    </script>
+    <style>
+        body { margin: 0; background: #050505; overflow: hidden; font-family: 'Inter', sans-serif; transition: background 0.5s; }
+        #canvas-container { width: 100vw; height: 100vh; cursor: grab; }
+        
+        /* UI Overlay */
+        .overlay { position: absolute; top: 20px; left: 20px; color: white; pointer-events: none; z-index: 10; }
+        .controls-ui { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); z-index: 20; }
+        
+        .badge {
+            display: inline-flex; align-items: center; padding: 4px 12px; border-radius: 99px;
+            font-size: 12px; text-transform: uppercase; transition: all 0.5s;
+        }
+        .verified { background: rgba(0, 255, 204, 0.1); border: 1px solid #00ffcc; color: #00ffcc; box-shadow: 0 0 15px rgba(0, 255, 204, 0.3); animation: pulse 2s infinite; }
+        .vaulted { background: rgba(255, 68, 68, 0.1); border: 1px solid #ff4444; color: #ff4444; box-shadow: 0 0 15px rgba(255, 68, 68, 0.3); }
+
+        .ghost-btn {
+            background: #111; border: 1px solid #333; color: white; padding: 10px 25px; border-radius: 5px;
+            cursor: pointer; pointer-events: auto; transition: 0.3s; font-weight: bold;
+        }
+        .ghost-btn:hover { background: #222; border-color: #555; }
+        .ghost-btn.active { background: #ff4444; border-color: #ff4444; color: black; }
+
+        @keyframes pulse { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
+    </style>
+</head>
+<body>
+
+    <div class="overlay">
+        <div id="status-badge" class="badge verified">● AI-IPVB Verified Sovereign</div>
+        <h1 class="text-3xl font-bold mt-2 uppercase tracking-tighter">Real AI-ID Registry</h1>
+        <p id="tier-status" class="text-gray-400 text-sm">Status: Public View | Tier 2: Sovereign Shield</p>
+    </div>
+
+    <div class="controls-ui">
+        <button id="ghost-toggle" class="ghost-btn">ACTIVATE GHOST MODE</button>
+    </div>
+
+    <div id="canvas-container"></div>
+
+    <script type="module">
+        import * as THREE from 'three';
+        import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+        // --- SCENE SETUP ---
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.getElementById('canvas-container').appendChild(renderer.domElement);
+        camera.position.z = 5;
+
+        // --- CARD & MATERIALS ---
+        const geometry = new THREE.BoxGeometry(3.5, 2.2, 0.05);
+        
+        // Standard Material (Glassy)
+        const glassMaterial = new THREE.MeshPhysicalMaterial({
+            color: 0xffffff, metalness: 0.1, roughness: 0.05, transmission: 0.9, thickness: 0.2, transparent: true, opacity: 0.8
+        });
+
+        const card = new THREE.Mesh(geometry, glassMaterial);
+        scene.add(card);
+
+        // --- DYNAMIC TEXTURES ---
+        function createTexture(isGhost = false) {
+            const canvas = document.createElement('canvas');
+            canvas.width = 512; canvas.height = 320;
+            const ctx = canvas.getContext('2d');
+            ctx.fillStyle = isGhost ? '#000' : '#111';
+            ctx.fillRect(0, 0, 512, 320);
+
+            if (!isGhost) {
+                ctx.fillStyle = '#fff'; ctx.font = 'bold 24px Inter'; ctx.fillText('NEHEMIAH MIA BROWN', 30, 60);
+                ctx.fillStyle = '#888'; ctx.font = '14px Inter'; ctx.fillText('AIID: 000-817-2026-X', 30, 90);
+                ctx.fillStyle = '#00ffcc'; ctx.fillText('HASH: 8f9e2...d41b', 30, 280);
+            } else {
+                ctx.fillStyle = '#ff4444'; ctx.font = 'bold 30px Inter'; ctx.fillText('[ ACCESS REDACTED ]', 100, 160);
+                ctx.strokeStyle = '#ff4444'; ctx.lineWidth = 2; ctx.strokeRect(20, 20, 472, 280);
+            }
+            return new THREE.CanvasTexture(canvas);
+        }
+
+        const publicTexture = createTexture(false);
+        const ghostTexture = createTexture(true);
+
+        const faceMaterial = new THREE.MeshBasicMaterial({ map: publicTexture, transparent: true, opacity: 0.9 });
+        card.material = [glassMaterial, glassMaterial, glassMaterial, glassMaterial, faceMaterial, glassMaterial];
+
+        // --- GHOST MODE LOGIC ---
+        let isGhostMode = false;
+        const btn = document.getElementById('ghost-toggle');
+        const badge = document.getElementById('status-badge');
+        const tierText = document.getElementById('tier-status');
+
+        btn.addEventListener('click', () => {
+            isGhostMode = !isGhostMode;
+            
+            // Update Textures
+            faceMaterial.map = isGhostMode ? ghostTexture : publicTexture;
+            
+            // Update UI
+            if (isGhostMode) {
+                btn.textContent = "DEACTIVATE GHOST MODE";
+                btn.classList.add('active');
+                badge.className = "badge vaulted";
+                badge.textContent = "● AI-IPVB Vaulted Identity";
+                tierText.textContent = "Status: PRIVATE | Ghost Mode Active";
+                glassMaterial.color.set(0x330000); // Tint the glass dark red
+            } else {
+                btn.textContent = "ACTIVATE GHOST MODE";
+                btn.classList.add('active'); // CSS toggle handled via classList
+                btn.classList.remove('active');
+                badge.className = "badge verified";
+                badge.textContent = "● AI-IPVB Verified Sovereign";
+                tierText.textContent = "Status: Public View | Tier 2: Sovereign Shield";
+                glassMaterial.color.set(0xffffff);
+            }
+        });
+
+        // --- LIGHTING & RENDER ---
+        const light = new THREE.PointLight(0xffffff, 100); light.position.set(2, 3, 4); scene.add(light);
+        const controls = new OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true; controls.autoRotate = true;
+
+        function animate() { requestAnimationFrame(animate); controls.update(); renderer.render(scene, camera); }
+        animate();
+    </script>
+</body>
+</html>
