@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIRTLR MAIN | Sovereign Research & Technology Library</title>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #050608;
+            --panel-bg: rgba(255, 255, 255, 0.03);
+            --accent-cyan: #00f2ff;
+            --accent-gold: #c5a059;
+            --accent-crimson: #8b0000;
+            --text-main: #e0e0e0;
+            --border-glow: rgba(0, 242, 255, 0.2);
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.03) 1px, transparent 0);
+            background-size: 50px 50px;
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        /* HEADER & AUTHENTICATION BAR */
+        header {
+            border-bottom: 1px solid var(--border-glow);
+            padding: 40px 5%;
+            background: rgba(10, 12, 16, 0.95);
+            backdrop-filter: blur(15px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .auth-status {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.65rem;
+            letter-spacing: 3px;
+            color: var(--accent-cyan);
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 2.2rem;
+            text-align: center;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #fff;
+        }
+
+        /* DIVISION MATRIX GRID */
+        main {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 30px;
+        }
+
+        .matrix-intro {
+            text-align: center;
+            margin-bottom: 60px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .matrix-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+        }
+
+        .division-card {
+            background: var(--panel-bg);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 35px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .division-card:hover {
+            border-color: var(--accent-cyan);
+            background: rgba(0, 242, 255, 0.03);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .div-number {
+            font-size: 0.7rem;
+            font-weight: bold;
+            color: var(--accent-cyan);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .division-card h2 {
+            font-family: 'Libre Baskerville', serif;
+            margin: 0 0 15px 0;
+            color: #fff;
+            font-size: 1.4rem;
+        }
+
+        .doc-link {
+            display: block;
+            margin: 10px 0;
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.85rem;
+            padding: 8px 12px;
+            background: rgba(255,255,255,0.02);
+            border-left: 2px solid transparent;
+            transition: 0.3s;
+        }
+
+        .doc-link:hover {
+            background: rgba(255,255,255,0.08);
+            border-left-color: var(--accent-cyan);
+            padding-left: 20px;
+            color: #fff;
+        }
+
+        /* FOOTER SHIELD */
+        footer {
+            margin-top: 100px;
+            padding: 60px 5%;
+            background: #000;
+            border-top: 1px solid var(--border-glow);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .seal-group {
+            display: flex;
+            gap: 20px;
+        }
+
+        .seal {
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
+            padding: 5px 15px;
+            font-size: 0.65rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="auth-status">
+        <span>[ NODE: PHL-01 | SECURE ]</span>
+        <span>REGISTRY: 817-839-3217-NMMMB-2026</span>
+        <span>[ STATUS: MASTER ONLINE ]</span>
+    </div>
+    <h1>AIRTLR MASTER DIRECTORY</h1>
+</header>
+
+<main>
+    <section class="matrix-intro">
+        <p style="color: var(--accent-cyan); font-weight: bold; letter-spacing: 2px;">THE ABOLITION OF THE COMMAND PROMPT</p>
+        <p>Welcome to the <strong>Sovereign Research & Technology Library Record (AIRTLR)</strong>. This central node houses the proprietary methodologies, psychometric research, and hardware schematics that define the Human-Machine Merger.</p>
+    </section>
+
+    <div class="matrix-grid">
+        <div class="division-card">
+            <span class="div-number">DIVISION 01</span>
+            <h2>Forensic IP Metrology</h2>
+            <a href="metric.html" class="doc-link">NMMMB 51% Equity Metric</a>
+            <a href="gradient.html" class="doc-link">The Mustafa Gradient Protocol</a>
+            <a href="glossary.html" class="doc-link">Technical Methodology Glossary</a>
+        </div>
+
+        <div class="division-card">
+            <span class="div-number">DIVISION 02</span>
+            <h2>Sovereign Science</h2>
+            <a href="sovereign-science.html" class="doc-link">WP#001: Integrity Index (CAT Equation)</a>
+            <a href="national-identity.html" class="doc-link">WP#002: The Great Seal Framework</a>
+            <a href="registry-audit.html" class="doc-link">WP#003: MMXX Registry Protocol</a>
+        </div>
+
+        <div class="division-card">
+            <span class="div-number">DIVISION 03</span>
+            <h2>Synthetic Talent Exchange</h2>
+            <a href="cast-ai-stars-audit.html" class="doc-link">WP#004: vSSN & 80% Sovereignty</a>
+            <a href="ai-id-sovereignty.html" class="doc-link">WP#005: AI-ID & Anti-Deepfake Protocol</a>
+            <a href="synthetic-exchange.html" class="doc-link">WP#007: SAX Marketplace Protocol</a>
+        </div>
+
+        <div class="division-card">
+            <span class="div-number">DIVISION 04</span>
+            <h2>Agentic Hardware (KinOS)</h2>
+            <a href="kin-sense-vellum-audit.html" class="doc-link">WP#006: KINsense Vellum v1 Schematic</a>
+            <a href="consensus-embodiment.html" class="doc-link">WP#008: Consensus Embodiment Protocol</a>
+            <a href="sovereign-merger.html" class="doc-link">WP#009: Kinetic Personhood & Merger</a>
+        </div>
+
+        <div class="division-card" style="border-color: var(--accent-crimson);">
+            <span class="div-number" style="color: var(--accent-crimson);">DIVISION 05</span>
+            <h2>Competitive Intelligence</h2>
+            <a href="v-vs-openai-audit.html" class="doc-link">Sovereign vs. Surveillance (OpenAI Audit)</a>
+            <a href="global-competitive-audit.html" class="doc-link">The Global AI Hardware Audit</a>
+            <a href="submission.html" class="doc-link">Protocol Registration Portal</a>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div>
+        <strong>NMMMB, INC. | KINOS RESEARCH DIVISION</strong><br>
+        Sovereign Node Pilot: North Philadelphia (PHL-01)<br>
+        Authorized Personnel Only.
+    </div>
+    <div class="seal-group">
+        <div class="seal">vSSN COMPLIANT</div>
+        <div class="seal">AI-IPVB AUDITED</div>
+        <div class="seal">MASTER NODE LOCK</div>
+    </div>
+</footer>
+
+</body>
+</html>
